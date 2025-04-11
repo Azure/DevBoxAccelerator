@@ -11,6 +11,20 @@ param(
 $InformationPreference = "Continue"
 $ErrorActionPreference = "Stop"
 
+function Install-Bicep {
+    # Look into the windows $PATH environment variable to see if bicep is installed.
+    # if it is not installed, download it from the GitHub release page, https://github.com/Azure/bicep/releases/latest/download/bicep-win-x64.exe and add it to the PATH
+    if (-not (Get-Command bicep -ErrorAction SilentlyContinue)) {
+        Write-Output "Bicep is not installed. Downloading and installing it..."
+        if (!(Test-Path -Path "$env:TEMP/tools")) {
+            New-Item -Path "$env:TEMP/tools" -ItemType Directory -Force | Out-Null
+        }
+        $bicepPath = Join-Path -Path $env:TEMP -ChildPath "tools/bicep.exe"
+        Invoke-WebRequest -Uri "https://github.com/Azure/bicep/releases/latest/download/bicep-win-x64.exe" -OutFile $bicepPath
+        $env:Path = $env:Path + ";" + ([System.IO.Path]::GetDirectoryName($bicepPath))
+    }
+}
+
 $configFile = Get-Content -Path $ConfigurationFilePath -Raw | ConvertFrom-Json
 $configSubscriptionId = $configFile.subscriptionId
 
@@ -39,6 +53,8 @@ if (![string]::IsNullOrWhiteSpace($SubscriptionId)) {
         }
     }
 }
+
+Install-Bicep
 
 $devCenterId = $configFile.devCenterId
 $devCenterLocation = Get-AzResource -ResourceId $devCenterId | Select-Object -ExpandProperty Location
