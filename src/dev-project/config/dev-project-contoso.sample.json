@@ -2,6 +2,7 @@
     "$schema": "../../schemas/dev-project.schema.json",
     "subscriptionId": "00000000-0000-0000-0000-000000000000",
     "name": "contoso-dev-project",
+    "location": "UK South",
     "resourceGroup": "rg-contoso-dev-project",
     "devCenterId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-contoso-dev-center/providers/Microsoft.DevCenter/devcenters/contoso-dev-center",
     "features": {
