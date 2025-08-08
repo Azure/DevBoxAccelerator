@@ -4,7 +4,7 @@ Organizations can deploy Dev Boxes using one or both of the following networking
 
 ## Microsoft-hosted network (MIH)
 An internet-first, fully isolated environment well-suited for SaaS-heavy or Zero Trust–aligned development scenarios.  
-While MIH Dev Boxes have no direct connection to a corporate network, they can still securely access private or on-premises resources through **Zero Trust Network Access (ZTNA)** solutions such as [Microsoft Entra Private Access](https://www.microsoft.com/en-gb/security/business/identity-access/microsoft-entra-private-accesss), or via a VPN client.  
+While MIH Dev Boxes have no direct connection to a corporate network, they can still securely access private or on-premises resources through **Zero Trust Network Access (ZTNA)** solutions such as [Microsoft Entra Private Access](https://www.microsoft.com/en-gb/security/business/identity-access/microsoft-entra-private-access), or via a VPN client.  
 These methods ensure resource access is granted based on **identity and device compliance** rather than implicit network location.
 
 ![MIH Architecture Diagram](../images/mih_devbox_single_region_secure_baseline.png)
