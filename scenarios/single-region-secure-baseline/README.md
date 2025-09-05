@@ -1,12 +1,14 @@
 # Single Region Secure Baseline Dev Box Implementation
 
-In this scenario, a [Dev Center](https://learn.microsoft.com/azure/templates/microsoft.devcenter/devcenters) and [Dev Center project](https://learn.microsoft.com/azure/templates/microsoft.devcenter/projects), along with the requisite components supporting use of Microsoft Dev Box, are deployed within a single region. This follows the [Azure Landing Zone architecture](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/#azure-landing-zone-architecture) as illustrated in the diagram below.
+In this scenario, a [Dev Center](https://learn.microsoft.com/azure/templates/microsoft.devcenter/devcenters) and [Dev Center project](https://learn.microsoft.com/azure/templates/microsoft.devcenter/projects), along with the requisite components (highlighted in green) are deployed within a single region and incorporated in the [Azure Landing Zone architecture](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/#azure-landing-zone-architecture) as illustrated in the diagram below.
 
-![Conceptual reference architecture for single region secure baseline scenario](../../images/single_region_secure_baseline.png)
+![Conceptual reference architecture for single region secure baseline scenario](../../images/mih_and_nc_single_region_secure_baseline.png)
 
 *Download the Visio diagram for this architecture [here](../../diagrams/devbox-accelerator-diagrams.vsdx).*
 
-The subset of components being provisioned in this example are presented as part of a broader set of subscriptions and resources to provide context on their placement within the overall [Azure Landing Zone architecture](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/#azure-landing-zone-architecture).
+> [!IMPORTANT]
+> The diagram above includes both Microsoft-hosted and Azure Network Connections to illustrate how different developer personas interact with the environment. In many cases, you may need to support both approaches to meet varied access requirements. For additional diagrams and a breakdown into the differences, refer to the guidance [here](../../docs/networking-approach.md).
+
 
 ## Core Architecture Components
 
